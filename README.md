@@ -126,7 +126,7 @@ for i in range(5):
     val = random.randint(1, 6)
     print(val)
 ```
-> Aby zaimportować wszystkie obietky z modułu należy wykorzystać * np `from math import *` :exclamation:
+> Aby zaimportować wszystkie obiekty z modułu należy wykorzystać * np `from math import *` :exclamation:
 ```Python
 from math import pi
 
