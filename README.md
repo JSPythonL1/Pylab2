@@ -330,4 +330,4 @@ with open("filename.txt") as f:
 :seven: Napisz funkcję wyznaczającą rozwiązania równania kwadratowego. Funkcja przyjmuje 3 parametry _a, b, c_ i rozwiązania zapisuje do pliku _result.txt_
 
 ## :exclamation: zadania 2-7 mają zostać dodane na GitHuba :exclamation:
-![Python](https://images83.fotosik.pl/1020/9da31fa7019491a2.jpg)
+![Python](https://img.devrant.com/devrant/rant/r_761752_NXWNB.jpg)
