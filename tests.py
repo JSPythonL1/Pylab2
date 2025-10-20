@@ -3,10 +3,11 @@ import os
 import pytest
 
 from src.lotto import lotto
-from src.kalkulator import dodaj, odejmij, pomnoz, podziel,pole_kola, obwod_kola, zapisz_do_pliku
+from src.kalkulator import dodaj, odejmij, pomnoz, podziel,pole_kola, obwod_kola, zapisz_do_pliku, rownanie_kwadratowe
 from src.suma_listy import suma_z_listy, suma_z_pliku
-from src.r_kwadratowe import rownanie_kwadratowe
 
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DATA_DIR = os.path.join(BASE_DIR, "data")
 
 def test_lotto():
     wynik = lotto()
@@ -47,8 +48,14 @@ def test_zapis_do_pliku(tmp_path):
 
 
 def test_rownanie_kwadratowe(tmp_path):
-    os.chdir(tmp_path)
+    result = os.path.join(DATA_DIR, "result.txt")
+
+    if os.path.exists(result):
+        os.remove(result)
+
     wynik = rownanie_kwadratowe(1, -3, 2)  # x^2 - 3x + 2 = 0
     assert sorted(wynik) == [1.0, 2.0]
-    assert os.path.exists("result.txt")
-    assert "1.0" in open("result.txt").read()
+
+    assert os.path.exists(result)
+    content = open(result, encoding="utf-8").read().strip()
+    assert "1.0" in content and "2.0" in content
